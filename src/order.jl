@@ -43,10 +43,6 @@ Base.broadcastable(x::Order) = Ref(x)
 Base.show(io::IO, x::Order) = print(io, x.trade_type, ',', x.security, ',', x.qty, '@', x.price,',', x.order_type, '{', round(value(x)),'}')
 value(t::Order) = t.qty * t.price * sign(t.trade_type)
 
-const MAX_EXPOSURE = 1.50
-const MIN_EXPOSURE = 1.00
-strategyexpotarget(universe::Dict) = max(MIN_EXPOSURE, (abs ∘ positionsize ∘ zscore)(universe) / 100. * MAX_EXPOSURE)
-
 const MAX_POS_SIZE = 0.03
 "Returns a value between 0.0 and MAX_POS_SIZE which is the equivalent of a 100 (or -100) position size in terms of % of portfolio"
 fullpositionexpo(tgts_sum, tgt_exposure=1.0) = min(MAX_POS_SIZE, tgt_exposure / abs(tgts_sum / 100.))

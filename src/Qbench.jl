@@ -2,9 +2,8 @@ module Qbench
 
 using  BusinessDays, Dates, Statistics, Printf
  
-export Split, Borrow, Security, ClosedEndFund, NetAssetValue, Close, Trade, Order, Discount, TradeType, OrderType, Dividend, SharesOutstanding, Portfolio, Position,
-        ratio, zscore, positionsize, limitprice, adv, isminmarketcap, isminadv,
-        strategyexpotarget, positiontargets, strategyexpotarget, hedgeneed, betsize, invbetsize, fullpositionexpo, tradeshareqty, mark!,
+export Split, Borrow, Security, Close, Trade, Order, TradeType, OrderType, Dividend, Portfolio, Position,
+        adv, isminmarketcap, isminadv, hedgeneed, tradeshareqty, mark!,
         probable_execution, gettradetype, value, sharesowned, longexposure, shortexposure, equity,
         grossexposure, netexposure, gettrades, cash, cost, nextday!, hedgebook!, positions, pnl,
         getposition, closingbell, shorts, getsecurity, get_missing_nav, refreshdata, annualized_return, sharpe, portfolio_statistics, period_return,
